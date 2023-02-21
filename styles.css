@@ -1,0 +1,23 @@
+#board {
+  width: 400px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+
+#board > * {
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#board > .black {
+  background-color: hsl(27deg 36% 55%);
+}
+
+#board > .white {
+  background-color: hsl(37deg 66% 83%);
+}
