@@ -1,23 +1,47 @@
+:root {
+  --square-background-white: hsl(37deg 66% 83%);
+  --square-background-black: hsl(27deg 36% 55%);
+
+  --square-label-black: #f0d9b5;
+  --square-label-white: #946f51;
+}
+
 #board {
-  width: 400px;
+  width: 80vw;
+  min-width: 400px;
+
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  align-items: center;
-  justify-content: center;
 }
 
-#board > * {
+#board > .square {
   aspect-ratio: 1 / 1;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
 }
 
-#board > .black {
-  background-color: hsl(27deg 36% 55%);
+#board > .square-black {
+  color: var(--square-label-black);
+  background-color: var(--square-background-black);
 }
 
-#board > .white {
-  background-color: hsl(37deg 66% 83%);
+#board > .square-white {
+  color: var(--square-label-white);
+  background-color: var(--square-background-white);
+}
+
+.square-label {
+  font-size: 11px;
+  font-weight: bolder;
+  position: absolute;
+  margin: 2px;
+}
+
+.square-label-row {
+  bottom: 0;
+  left: 0;
+}
+
+.square-label-column {
+  top: 0;
+  right: 0;
 }
