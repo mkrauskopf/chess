@@ -3,41 +3,41 @@ console.debug('Loading the chess board...')
 const board = document.getElementById('board')
 
 const arr0to7 = [...Array(8).keys()]
-const rows = arr0to7.map((rowIdx) => rowIdx + 1)
-const columns = arr0to7.map((coldIdx) => String.fromCharCode(coldIdx + 97))
+const ranks = arr0to7.map((rankIdx) => rankIdx + 1)
+const files = arr0to7.map((fileIdx) => String.fromCharCode(fileIdx + 97))
 
-const columnToIndex = new Map(arr0to7.map((coldIdx) => [String.fromCharCode(coldIdx + 97), coldIdx]))
-const rowToIndex = new Map(arr0to7.map((rowIdx) => [rowIdx + 1, rowIdx]))
+const fileToIndex = new Map(arr0to7.map((fileIdx) => [String.fromCharCode(fileIdx + 97), fileIdx]))
+const rankToIndex = new Map(arr0to7.map((rankIdx) => [rankIdx + 1, rankIdx]))
 
 function renderBoard() {
-  rows.reverse().forEach((row) => {
-    columns.forEach((column) => {
-      const square = createSquare(column, row)
+  ranks.reverse().forEach((rank) => {
+    files.forEach((file) => {
+      const square = createSquare(file, rank)
       board.appendChild(square)
     })
   })
 }
 
-function createSquare(column, row) {
+function createSquare(file, rank) {
   const square = document.createElement('div')
   square.classList.add(
     'square',
-    (rowToIndex.get(row) + columnToIndex.get(column)) % 2 === 0 ? 'square-black' : 'square-white'
+    (rankToIndex.get(rank) + fileToIndex.get(file)) % 2 === 0 ? 'square-black' : 'square-white'
   )
 
-  if (row === 1) {
-    square.appendChild(createSquareLabel(column, 'row'))
+  if (rank === 1) {
+    square.appendChild(createSquareLabel(file, 'rank'))
   }
-  if (column === 'h') {
-    square.appendChild(createSquareLabel(row, 'column'))
+  if (file === 'h') {
+    square.appendChild(createSquareLabel(rank, 'file'))
   }
 
   return square
 }
 
-function createSquareLabel(label, rowOrCol) {
+function createSquareLabel(label, rankOrFile) {
   const squareLabel = document.createElement('span')
-  squareLabel.classList.add('square-label', `square-label-${rowOrCol}`)
+  squareLabel.classList.add('square-label', `square-label-${rankOrFile}`)
   squareLabel.appendChild(document.createTextNode(label))
   return squareLabel
 }
