@@ -43,12 +43,12 @@ body {
   margin: 2px;
 }
 
-.square-label-row {
+.square-label-file {
   bottom: 0;
   left: 0;
 }
 
-.square-label-column {
+.square-label-rank {
   top: 0;
   right: 0;
 }

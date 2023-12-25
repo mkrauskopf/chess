@@ -26,10 +26,10 @@ function createSquare(file, rank) {
   )
 
   if (rank === 1) {
-    square.appendChild(createSquareLabel(file, 'rank'))
+    square.appendChild(createSquareLabel(file, 'file'))
   }
   if (file === 'h') {
-    square.appendChild(createSquareLabel(rank, 'file'))
+    square.appendChild(createSquareLabel(rank, 'rank'))
   }
 
   return square
