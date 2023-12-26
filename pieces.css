@@ -1,0 +1,54 @@
+.black,
+.white {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.black.pawn {
+  background-image: url('images/pieces/bP.svg');
+}
+
+.white.pawn {
+  background-image: url('images/pieces/wP.svg');
+}
+
+.black.rook {
+  background-image: url('images/pieces/bR.svg');
+}
+
+.white.rook {
+  background-image: url('images/pieces/wR.svg');
+}
+
+.black.knight {
+  background-image: url('images/pieces/bN.svg');
+}
+
+.white.knight {
+  background-image: url('images/pieces/wN.svg');
+}
+
+.black.bishop {
+  background-image: url('images/pieces/bB.svg');
+}
+
+.white.bishop {
+  background-image: url('images/pieces/wB.svg');
+}
+
+.black.queen {
+  background-image: url('images/pieces/bQ.svg');
+}
+
+.white.queen {
+  background-image: url('images/pieces/wQ.svg');
+}
+
+.black.king {
+  background-image: url('images/pieces/bK.svg');
+}
+
+.white.king {
+  background-image: url('images/pieces/wK.svg');
+}
