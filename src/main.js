@@ -51,7 +51,7 @@ function createSquare(file, rank) {
   square.id = `${file}${rank}`
   square.classList.add(
     'square',
-    (rankToIndex.get(rank) + fileToIndex.get(file)) % 2 === 0 ? 'square-black' : 'square-white'
+    (rankToIndex.get(rank) + fileToIndex.get(file)) % 2 === 0 ? 'square-black' : 'square-white',
   )
 
   if (rank === 1) {
