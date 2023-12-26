@@ -1,14 +1,14 @@
 {
   "scripts": {
-    "prettier": "prettier -c src && prettier-package-json -l ./package.json",
-    "prettier:fix": "prettier -w src && prettier-package-json --write ./package.json",
+    "prettier": "prettier -c . && prettier-package-json -l ./package.json",
+    "prettier:fix": "prettier -w . && prettier-package-json --write ./package.json",
     "start": "serve"
   },
   "devDependencies": {
     "import-sort-style-module": "6.0.0",
-    "prettier": "2.8.4",
+    "prettier": "3.1.1",
     "prettier-package-json": "2.8.0",
     "prettier-plugin-import-sort": "0.0.7",
-    "serve": "14.2.0"
+    "serve": "14.2.1"
   }
 }
