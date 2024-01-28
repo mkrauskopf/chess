@@ -2,7 +2,8 @@
  * Provides functionality for Forsyth–Edwards Notation (FEN).
  */
 
-import { increaseFile } from './tools.mjs'
+import type { File, Rank } from './tools.mjs'
+import { decreaseRank, increaseFile } from './tools.mjs'
 import { renderPiece } from './board.mjs'
 
 const charToPiece = new Map([
@@ -14,13 +15,13 @@ const charToPiece = new Map([
   ['k', 'king'],
 ])
 
-function renderPieceFEN(pieceChar, file, rank) {
-  renderPiece(/[pnbrqk]/.test(pieceChar) ? 'black' : 'white', charToPiece.get(pieceChar.toLowerCase()), file, rank)
+function renderPieceFEN(pieceChar: string, file: File, rank: Rank) {
+  renderPiece(/[pnbrqk]/.test(pieceChar) ? 'black' : 'white', charToPiece.get(pieceChar.toLowerCase())!, file, rank)
 }
 
-function applyFEN(fen) {
-  let rank = 8
-  let file = 'a'
+function applyFEN(fen: string) {
+  let rank: Rank = '8'
+  let file: File = 'a'
   for (const c of fen) {
     switch (true) {
       case /\d/.test(c):
@@ -29,7 +30,7 @@ function applyFEN(fen) {
         }
         break
       case c === '/':
-        rank--
+        rank = decreaseRank(rank)
         file = 'a'
         break
       case c === ' ':

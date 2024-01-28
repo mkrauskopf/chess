@@ -1,15 +1,21 @@
 {
+  "name": "chess",
   "scripts": {
-    "prettier": "prettier -c . && prettier-package-json -l ./package.json",
-    "prettier:fix": "prettier -w . && prettier-package-json --write ./package.json",
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "clean:build": "run-s clean build",
+    "prettier": "prettier -c src && prettier-package-json -l ./package.json",
+    "prettier:fix": "prettier -w src && prettier-package-json --write ./package.json",
     "start": "serve"
   },
   "devDependencies": {
     "import-sort-style-module": "6.0.0",
-    "prettier": "3.1.1",
+    "npm-run-all": "4.1.5",
+    "prettier": "3.2.4",
     "prettier-package-json": "2.8.0",
     "prettier-plugin-import-sort": "0.0.7",
-    "serve": "14.2.1"
+    "serve": "14.2.1",
+    "typescript": "5.3.3"
   },
   "engines": {
     "node": "20.10.0",
