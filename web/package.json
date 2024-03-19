@@ -1,5 +1,5 @@
 {
-  "name": "chess",
+  "name": "chesspit-web",
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist",
